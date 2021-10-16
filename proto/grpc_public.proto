@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package counter;
+
+import "google/api/annotations.proto";
+import "proto/common.proto";
+
+service CounterPublic {
+    rpc CountV1 (EmptyMessage) returns (EmptyMessage) {
+        option (google.api.http) = {
+            get: "/v1/count"
+        };
+    }
+}
