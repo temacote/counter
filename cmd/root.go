@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"bytes"
 	"os"
 	"os/signal"
 	"syscall"
@@ -34,8 +33,8 @@ var (
 
 	// Root command.
 	rootCmd = &cobra.Command{
-		Use:           "user [command]",
-		Long:          "user project",
+		Use:           "counter [command]",
+		Long:          "counter project",
 		SilenceUsage:  true,
 		SilenceErrors: true,
 		PersistentPreRunE: func(cmd *cobra.Command, args []string) (err error) {
@@ -66,11 +65,13 @@ var (
 				return err
 			}
 
-			if err = w.Get(func(val []byte) error {
-				return conf.MergeConfig(bytes.NewBuffer(val))
-			}); err != nil {
-				return err
-			}
+			//TODO вынести часть конфига в консул и включить merge
+
+			/*			if err = w.Get(func(val []byte) error {
+							return conf.MergeConfig(bytes.NewBuffer(val))
+						}); err != nil {
+							return err
+						}*/
 
 			// graceful stop
 			go func() {

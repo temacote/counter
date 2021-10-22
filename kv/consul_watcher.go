@@ -40,7 +40,7 @@ func NewConsulWatcher(client *api.Client, logger *zap.Logger, conf *viper.Viper)
 
 func (k *consulWatcher) Watch(handle func(val []byte) error) {
 	var (
-		logger = k.logger.With(zap.String("subsystem", "kwwatcher"), zap.String("key", k.consulKey))
+		logger = k.logger.With(zap.String("subsystem", "kvwatcher"), zap.String("key", k.consulKey))
 		err    error
 	)
 

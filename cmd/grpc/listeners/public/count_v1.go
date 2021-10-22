@@ -2,14 +2,16 @@ package listeners
 
 import (
 	"context"
+	"log"
 
 	counter "sber_cloud/tw/proto"
 )
 
-// CreateUserV1 метод создания нового пользователя
+// CountV1
 func (l CounterPublicListener) CountV1(
 	ctx context.Context,
 	req *counter.EmptyMessage,
 ) (response *counter.EmptyMessage, err error) {
-	return
+	log.Println("CountV1")
+	return &counter.EmptyMessage{}, nil
 }

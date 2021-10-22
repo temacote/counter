@@ -3,6 +3,7 @@ syntax = "proto3";
 package counter;
 
 import "google/api/annotations.proto";
+import "protoc-gen-swagger/options/annotations.proto";
 import "proto/common.proto";
 
 service CounterPublic {
@@ -10,5 +11,14 @@ service CounterPublic {
         option (google.api.http) = {
             get: "/v1/count"
         };
-    }
+
+        option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+            description: "Return empty message"
+            summary:"Summary: Echo rpc"
+            external_docs:{
+                url:"https://github.com/grpc-ecosystem/grpc-gateway";
+                description:"";
+            }
+        };
+    };
 }

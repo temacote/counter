@@ -4,3 +4,12 @@ package counter;
 
 message EmptyMessage {
 }
+
+message Client {
+    string ip = 1;
+    string host = 2;
+    string domain = 3;
+    string userAgent = 4;
+    string language = 5;
+    string location = 6;
+}

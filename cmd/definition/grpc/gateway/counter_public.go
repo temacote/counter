@@ -11,7 +11,7 @@ import (
 )
 
 // DefGRPCUserPublicGateway definition name.
-const DefGRPCUserPublicGateway = "gateway_grpc_user_public"
+const DefGRPCUserPublicGateway = "gateway_grpc_counter_public"
 
 // Definition init func.
 func init() {

@@ -52,6 +52,8 @@ func init() {
 				cfg.SetDefault("grpc.public_listen", "127.0.0.1:3017")
 				cfg.SetDefault("grpc.public_endpoint", "127.0.0.1:3017")
 				cfg.SetDefault("tracing.url", "localhost:6831")
+				cfg.SetDefault("redis.url", "localhost:6379")
+				cfg.SetDefault("storage_file.path", "local.txt")
 
 				return cfg, nil
 			},

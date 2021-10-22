@@ -1,0 +1,36 @@
+namespace: "sber_cloud"
+service: counter
+instance: dev
+
+consul:
+  token: "token"
+  address: 127.0.0.1:8500
+
+logger:
+  url: ""
+  cores:
+    - level: debug
+      encoding: console
+  caller: true
+  stacktrace: error
+  development: true
+
+grpc:
+  public_listen: ":3017"
+  internal_listen: ":3016"
+
+http:
+  listen: ":3018"
+
+tracing:
+  enabled: on
+
+redis:
+  host: localhost
+  port: 6379
+
+monitoring:
+  disable_log_push_error: true
+
+storage_file:
+  path: "storage_file.txt"

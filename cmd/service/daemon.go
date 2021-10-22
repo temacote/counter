@@ -28,7 +28,7 @@ func (d *daemon) Start() (err error) {
 
 		if err = d.monitoring.Inc(&monitoring.Metric{
 			Namespace: "dev",
-			Subsystem: "user",
+			Subsystem: "counter",
 			Name:      "daemon",
 			ConstLabels: map[string]string{
 				"method": "start",

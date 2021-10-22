@@ -1,16 +1,22 @@
 package listeners
 
-import "sber_cloud/tw/definition/logger"
-import "sber_cloud/tw/proto"
+import (
+	counter2 "sber_cloud/tw/definition/counter"
+	"sber_cloud/tw/definition/logger"
+	"sber_cloud/tw/proto"
+)
 
 type CounterPublicListener struct {
-	log logger.Logger
+	log     logger.Logger
+	counter counter2.Counter
 }
 
 func NewCounterPublicListener(
 	log logger.Logger,
+	counter counter2.Counter,
 ) counter.CounterPublicServer {
 	return &CounterPublicListener{
-		log: log,
+		log:     log,
+		counter: counter,
 	}
 }
